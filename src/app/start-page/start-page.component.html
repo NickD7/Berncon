@@ -1,0 +1,473 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="topnav" id="myNavbar">
+            <a (click)="toHome()" class="active">Home</a>
+            <a (click)="toAbout()">Über uns</a>
+            <a (click)="toTeam()">Team</a>
+            <a (click)="toFotos()">Fotos</a>
+            <a (click)="toContact()">Kontakt</a>
+            <div class="login">
+                <a (click)="onLogout()" style="float: right; font-size: 17px; display: none;">Login</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" (click)="respNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY
+				<span class="w3-hide-small">WEBSITE</span> LOGO</span>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">ÜBER UNS</h3>
+        <br>
+        <p>Wir sind auf SAP Entwicklungen für Kunden aus der DACH-Region spezialisiert. Als SAP Partner (ID #1697496) im Bereich Softwareentwicklung bieten wir Ihnen eine herausragende Qualität und technische Exzellenz. Durch unsere hohe Spezialisierung
+            konnten wir den SAP Softwareentwicklungsprozess immer weiter optimieren. Aus unserer umfangreichen Entwicklungserfahrung entstanden smarte Lösungen mit denen wir SAP Leistungen zu marktführenden Preisen anbieten können:</p>
+        <br id="about">
+        <p><b>SmartShore</b> senkt die Entwicklungskosten. </p>
+        <button class="w3-blue-gray" onclick="document.getElementById('id01').style.display='block'" id="myBtn">Mehr</button>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-blue-gray w3-text-white">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h1>Smartshore</h1>
+                </header>
+                <br>
+                <div class="w3-container">
+                    <p>Smartshore ist eine Form des Nearshorings, die speziell für Kunden aus der DACH-Region entwickelt wurde. Unser Nearshoring Standort befindet sich in der bulgarischen Hauptstadt Sofia. Als Teil der Europäischen Union bietet Bulgarien
+                        Rechtssicherheit sowie wirtschaftliche und politische Stabilität. Bulgarien gehört zu den renommiertesten Nearshoring Destinationen und landet bei entsprechenden Studien relgemässig auf dem ersten Platz innerhalb Europas, wie z.B.
+                        bei der <b><a href="http://www.cushmanwakefield.com/en/research-and-insight/2015/business-process-outsourcing-location-index-2015/">National Outsourcing Association (NOA)</a></b>, dem <b><a href="http://www.gsa-uk.com/event/noa-awards-2015/">Cushman & wakefield Index</a></b>,
+                        dem <b><a href="https://basis.org.bd/resource/A%20Wealth%20of%20Choices.pdf">A.T. Kearney Global Services Location Index (GSLI)</a></b> und vielen weiteren. Smartshore wurde auf der Grundlage unserer eigenen Erfahrungen mit Near-
+                        und Offshoring, den Erfahrungen von befreundeten Unternehmen und Kunden sowie zahlreicher Studien entwickelt. Mit Smartshore beheben wir die grössten Risiken, die zum Scheitern von Outsourcing Projekten führen: Kommunikationsprobleme
+                        und mangelnde Qualität. Unser deutsch-schweizer Management in Bulgarien stellt sicher, dass in deutscher Sprache und Schweizer Qualität gearbeitet wird. Um auf diesem Niveau arbeiten zu können gehen wir bei der Mitarbeiterqualifikation
+                        keine Kompromisse ein:</p>
+                    <div class="w3-row w3-center w3-blue-gray w3-padding-small">
+                        <div class="w3-quarter w3-section w3-text-white">
+                            <span class="w3-xlarge"><b>100%</b></span>
+                            <br class="w3-large"><b>Studierte Informatiker</b>
+                            <div class="w3-left-align">Wir stellen ausschliesslich studierte Informatiker ein. Über 90% unserer Informatiker kommen aus der bulgarischen Eliteuniversität TU Sofia. Da wir für bulgarische Verhältnisse überdurchschnittliche Gehälter bezahlen, können
+                                wir unter den talentiertesten Absolventen auswählen. Durch ein mehrstufiges Auswahlverfahren wird sichergestellt, dass wir nur die besten Köpfe einstellen.</div>
+                        </div>
+                        <div class="w3-quarter w3-section w3-text-white">
+                            <span class="w3-xlarge"><b>100%</b></span>
+                            <br class="w3-large"><b>SAP zertifiziert</b>
+                            <div class="w3-left-align">Alle SAP-Entwickler sind direkt von der SAP in ihrem Fachbereich zertifiziert, z.B. in SAP UI5 oder ABAP. Die Zertifizierung ist ein Nachweis dafür, dass der Entwickler die notwendigen Kompetenzen auch tatsächlich besitzt.</div>
+                        </div>
+                        <div class="w3-quarter w3-section w3-text-white">
+                            <span class="w3-xlarge"><b>100%</b></span>
+                            <br class="w3-large"><b>fliessend Deutsch</b>
+                            <div class="w3-left-align">Unsere deutschsprachigen Mitarbeiter sorgen dafür, dass die Kostenvorteile nicht wieder durch erhöhte Kommunikationsaufwände relativiert werden. Alle Entwickler sprechen fliessend deutsch und haben ein Sprachzertifikat vom
+                                Goethe Institut oder ein Deutsches Sprachdiplom (DSD).</div>
+                        </div>
+                        <div class="w3-quarter w3-section w3-text-white">
+                            <span class="w3-xlarge"><b>100%</b></span>
+                            <br class="w3-large"><b>Festangestellte</b>
+                            <div class="w3-left-align">Unsere Entwickler sind alle in einer regulären Festanstellung, da wir nur so die Qualität swicherstellen können. Im Gegensatz zu vielen anderen Nearshore-Dienstleistern verstehen wir uns nicht als Personalvermittlung.</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p><b>SmartDelivery</b> verbessert den Entwicklungsprozess.</p>
+        <button class="w3-blue-gray" onclick="document.getElementById('id02').style.display='block'" id="myBtn2">Mehr</button>
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-blue-gray w3-text-white">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h1>Smart Delivery</h1>
+                </header>
+                <br>
+                <div class="w3-container">
+                    <p>SAP UI5/Fiori ist die neue Standardoberfläche der SAP und einer unserer technischen Schwerpunkte. Aus unserer umfangreichen Entwicklungserfahrung entstand das standardisierte Vorgehensmodell Smart Delivery für SAP UI5/Fiori Entwicklungen.
+                        Für Kunden die noch keine Erfahrung mit SAP UI5/Fiori haben bieten wir gerne eine Beratung an und präsentieren die Möglichkeiten der Technologie anhand von Eigenentwicklungen.</p>
+                    <div class="w3-row w3-center w3-blue-gray w3-padding-small">
+                        <div class="w3-third w3-section w3-text-white">
+                            <span class="w3-xlarge">
+														<b>Spezifikation</b>
+													</span>
+                            <br class="w3-large">
+                            <b>(vor Ort)</b>
+                            <div class="w3-left-align">
+                                <b>Mockup first!</b> Wir erstellen die funktionale Spezifikation in Form eines klickbaren Mockups. Der Mockup sieht genau so aus wie die spätere Software und kann verschiedenen Interessensgruppen präsentiert werden. Wir
+                                erarbeiten den Mockup gemeinsam mit Ihnen zusammen vor Ort. Dadurch lernen sich die Projektmitglieder kennen und es entsteht ein gemeinsames Verständnis für das Projekt. Im zweiten Schritt schreiben wir auf Grundlage des
+                                Mockups eine technische Spezifikation. Die technische Spezifikation ist Basis für eine Kostenschätzung und kann auch die Basis für einen Werkvertrag sein.</div>
+                        </div>
+                        <div class="w3-third w3-section w3-text-white">
+                            <span class="w3-xlarge">
+														<b>Entwicklung & Testing</b>
+													</span>
+                            <br class="w3-large">
+                            <b>(Remote)</b>
+                            <div class="w3-left-align"> Wir entwickeln die Software in unserem Development Center. Gerne verwenden wir dabei das agile Vorgehensmodell SCRUM, so dass wir Ihnen nach jedem Sprint einen Zwischenstand präsentieren können. Nach der Realisierungsphase
+                                wird die Software von uns gründlich getestet. Wir entwickelten das erste
+                                <b>automatisierte Testframework für SAP UI5/Fiori</b>, mit dem die komplette Anwendung innerhalb von Sekunden getestet werden kann.</div>
+                        </div>
+                        <div class="w3-third w3-section w3-text-white">
+                            <span class="w3-xlarge">
+														<b>Abnahme</b>
+													</span>
+                            <br class="w3-large">
+                            <b>(vor Ort)</b>
+                            <div class="w3-left-align"> Am Ende wird die Software im Rahmen eines Abnahmetests an den Kunden übergeben. Wir begleiten Sie bei der Produktivsetzung und stehen für auftretende Fragen zur Verfügung. In einem Wartungsvertrag können weitere Leistungen
+                                wie Hosting oder zukünftige Entwicklungspakete definiert werden.</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Wir springen immer dort ein, wo der SAP Standard funktionale Lücken aufweist oder wo Prozesse nur sehr aufwendig umgesetzt werden können. Anhand der Anforderungen unserer Kunden wählen wir die geeignete Technologie – SAP GUI, Webanwendung oder
+            Mobile. Durch unsere Prozess- und Anwendungserfahrung entwickeln wir eine integrierte und intuitiv zu bedienende Anwendung. Dabei decken wie die volle Bandbreite der SAP-Entwicklungstechnologien ab, von den Erweiterungs- und Modifikationstechniken
+            über klassisches ABAP bis hin zu den neuesten Mobile und HANA Entwicklungen.</p>
+    </div>
+
+    <!-- Second Parallax Image with Portfolio Text -->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">TEAM</span>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Section) -->
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">UNSERES TEAM</h3>
+        <br>
+        <div class="row">
+            <div class="column" id="team">
+                <div class="card">
+                    <img src="../../assets/images/Stefan.png" alt="Stefan" style="width:100%;">
+                    <div class="container">
+                        <h2>Stefan Bernhard</h2>
+                        <p class="title">CEO &amp; Founder</p>
+                        <p>Stefan Bernhard ist Chief Executive Officer und Gründer des Unternehmens. Er begann bereits mit 15 Jahren Software zu entwickeln und sich für Netzwerktechnik zu interessieren. Mit 18 gründete er zusammen mit Schulfreunden einen
+                            IT-Verein und organisierte die grössten Netzwerkevents Süddeutschlands. Nach seinem Abitur studierte er an der Hochschule Konstanz Informatik. Mit rund 5 Jahren Berufserfahrung als SAP Entwickler und Architekt gründete er die
+                            BERNCON GmbH mit dem Ziel innovative Software auf möglichst wirtschaftliche Weise zu entwickeln.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="../../assets/images/Beni.png" alt="Benedikt" style="width:100%">
+                    <div class="container">
+                        <h2>Benedikt Kromer</h2>
+                        <p class="title">CTO</p>
+                        <p>Benedikt Kromer ist als Chief Technology Officer für die technologische Ausrichtung des Unternehmens verantwortlich. Er entdeckte bereits als Jugendlicher sein Interesse für Softwareentwicklung und studierte ebenfalls an der Hochschule
+                            Konstanz Informatik. Sein Schwerpunkt liegt auf den neuen und innovativen SAP Technologien wie SAP UI5 und SAP Fiori. Im operativen Geschäft nimmt er leitende Aufgaben beim Design und der Qualitätssicherung war. Auf Wunsch
+                            coacht er interne Entwickler unserer Kunden und führt Code-Reviews durch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+            <button class="w3-blue-gray" onclick="document.getElementById('id03').style.display='block'" id="myBtn3">Mehr anzeigen</button>
+        </div>
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-blue-gray w3-text-white">
+                    <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h1>Team</h1>
+                </header>
+                <h1 style="text-align: center;"><b>Backoffice</b></h1>
+                <div class="rowTeam">
+                    <div class="columnTeam">
+                        <img src="../../assets/images/Theresa.png">
+                        <p><b>Theresa Glaser ist für den Bereich Personalmanagement verantwortlich. Bei Fragen zu Ihrer Bewerbung ist Frau Glaser der richtige Ansprechpartner.</b>
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img src="../../assets/images/Aylin.png">
+                        <br>
+                        <br>
+                        <img src="../../assets/images/Zdravko.png">
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="columnTeam">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 style="text-align: center;"><b>Entwickler</b></h1>
+                        <br>
+                        <img src="../../assets/images/Boqn.png">
+                        <br>
+                        <br>
+                        <img src="../../assets/images/Hristiqn.png">
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="columnTeam">
+                        <img src="../../assets/images/Nikol.jpg">
+                        <p><b>Nikol Koleva unterstützt uns auf Teilzeitbasis bei verschiedenen Aufgaben im Backoffice.</b></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img src="../../assets/images/Nasya.png">
+                        <br>
+                        <br>
+                        <img src="../../assets/images/Deepack.jpg">
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
+			<i class="fa fa-remove"></i>
+		</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption" class="w3-opacity w3-large"></p>
+        </div>
+    </div>
+
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">FOTOS</span>
+        </div>
+    </div>
+
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">EINIGE BILDER AUS UNSEREM STANDORT IN SOFIA</h3>
+    </div>
+
+    <div class="slideshow-container" id="fotos">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides">
+            <div class="numbertext">1 / 12</div>
+            <img src="../../assets/images/Gebaeude2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 12</div>
+            <img src="../../assets/images/Arbeitsplätze-2er-Gruppe.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 12</div>
+            <img src="../../assets/images/Arbeitsplätze-3er-Gruppe.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 12</div>
+            <img src="../../assets/images/Arbeitsplätze-2er-Gruppe-2-1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5 / 12</div>
+            <img src="../../assets/images/Aussicht.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">6 / 12</div>
+            <img src="../../assets/images/buecher.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">7 / 12</div>
+            <img src="../../assets/images/kueche2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">8 / 12</div>
+            <img src="../../assets/images/Meetingraum-1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">9 / 12</div>
+            <img src="../../assets/images/raum-1-von-stefan.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">10 / 12</div>
+            <img src="../../assets/images/raum-2-sven2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">11 / 12</div>
+            <img src="../../assets/images/raum-3-von-stefan.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">12 / 12</div>
+            <img src="../../assets/images/theresa.jpg" style="width:100%">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+        <a class="next" (click)="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" (click)="currentSlide(1)"></span>
+        <span class="dot" (click)="currentSlide(2)"></span>
+        <span class="dot" (click)="currentSlide(3)"></span>
+        <span class="dot" (click)="currentSlide(4)"></span>
+        <span class="dot" (click)="currentSlide(5)"></span>
+        <span class="dot" (click)="currentSlide(6)"></span>
+        <span class="dot" (click)="currentSlide(7)"></span>
+        <span class="dot" (click)="currentSlide(8)"></span>
+        <span class="dot" (click)="currentSlide(9)"></span>
+        <span class="dot" (click)="currentSlide(10)"></span>
+        <span class="dot" (click)="currentSlide(11)"></span>
+        <span class="dot" (click)="currentSlide(12)"></span>
+    </div>
+    <br>
+    <br>
+
+    <!-- Fourth Parallax Image with Portfolio Text -->
+    <div class="bgimg-4 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">KONTAKT</span>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">STANDORTE</h3>
+        <br>
+        <div class="w3-blue-gray">
+            <div class="rowMap">
+                <div class="columnMap" id="contact">
+                    <iframe width="360" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4UMFv1qqmkcRA4wwaWcfWdo&key=AIzaSyAJWSiTvwvUtAaa1OQy5_kIjmy3pf6XRyQ" allowfullscreen></iframe>
+                </div>
+                <div class="columnMap">
+                    <h1>Zug, Schweiz</h1>
+                    <br>Baarerstrasse 112
+                    <br>6300 Zug, Schweiz
+                    <br>
+                    <br>
+                    <p>Unser Headquarter befindet sich in der Zentralschweiz in der Stadt Zug. Durch eine hervorragende Anbindung an das überregionale Verkehrsnetz und an den Flughafen können wir unsere Kunden im gesamten DACH-Raum innerhalb kurzer Zeit
+                        erreichen. Unsere Schweizer GmbH ist für Sie immer der Vertragspartner, auch wenn Sie mit unserem Standort in Bulgarien zusammenarbeiten.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="w3-blue-gray">
+            <div class="rowMap">
+                <div class="columnMap">
+                    <iframe width="360" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Akad.%20Stefan%20Mladenov%20Street%2046&key=AIzaSyAJWSiTvwvUtAaa1OQy5_kIjmy3pf6XRyQ" allowfullscreen></iframe>
+                </div>
+                <div class="columnMap">
+                    <h1>Sofia, Bulgarien</h1>
+                    <br>Akademik Stefan Mladenov 46
+                    <br>1700 Sofia, Bulgaria
+                    <br>
+                    <br>
+                    <p>Wir befinden uns in der Hauptstadt Sofia im Gebäude des Jahres 2015 mit einem traumhaften Blick über die Stadt bis auf den Berg Vitosha. Unser Office liegt mitten im Studentenviertel, nur wenige Gehminuten von der Fakultät für Informatik
+                        entfernt. Zum Flughafen sind es rund 10 Minuten mit dem Taxi. Das Office ist mit allem ausgestattet was für effizientes Arbeiten benötigt wird: Videokonferenzraum, schnelles Internet mit 1000MBit, Arbeitsplatzausstattung wie in
+                        Deutschland,…
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h3 class="w3-center" id="contact">SCHICKEN SIE UNS EIN EMAIL</h3>
+        <br>
+        <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                </div>
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+            <button class="w3-button w3-blue-gray w3-right w3-section" type="submit">
+										<i class="fa fa-paper-plane" (click)="sendMessage()"></i> SEND MESSAGE
+									</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-small w3-opacity w3-hover-opacity-off">
+        <a class="w3-button w3-light-grey" (click)="toTop()">
+            <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Change style of navbar on scroll
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script> -->
