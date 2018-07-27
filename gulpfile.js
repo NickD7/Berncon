@@ -13,8 +13,8 @@ const argv = require("yargs").argv;
  * @param {*} cmd shell dommand
  * @param {*} done gulp callback
  */
-function shellWithLog(cmd,done){
-    let command = exec(cmd, (err)=>{if(err)  {throw err }else{ done()}});
+function shellWithLog(cmd, done) {
+    let command = exec(cmd, (err) => { if (err) { throw err } else { done() } });
     command.stdout.on('data', console.log);
     command.stderr.on('data', console.error);
     return command
@@ -24,14 +24,14 @@ function shellWithLog(cmd,done){
  * @param {*} target git url => git.heroku.com/bexboardmean.git
  * @returns stream (for gulp as done function)
  */
-function deploy(target, done){
-    return shellWithLog('git push https://tmp:'+ argv.herokuAPIKey +'@'+ target +'  HEAD:master --force', done);
+function deploy(target, done) {
+    return shellWithLog('git push https://tmp:' + argv.herokuAPIKey + '@' + target + '  HEAD:master --force', done);
     /*return shellWithLog('git remote add heroku https://tmp:'+ argv.herokuAPIKey +'@'+ target, 
         ()=> shellWithLog("git push heroku HEAD:master --force", 
             ()=> shellWithLog("git remote remove heroku", done)));*/
 }
 
-gulp.task('build', function(done){
+gulp.task('build', function(done) {
     return shellWithLog('ng build', done)
 });
 
@@ -39,13 +39,13 @@ gulp.task('build', function(done){
 //  TEST tasks
 //
 
-gulp.task("beautify:backend" ,function () {
-    return gulp.src( "server/**/*.js")
+gulp.task("beautify:backend", function() {
+    return gulp.src("server/**/*.js")
         .pipe(beautify({ jslintHappy: true, "end_with_newline": true }))
         .pipe(gulp.dest("server"));
 });
-   
-gulp.task("lint:backend", function () {
+
+gulp.task("lint:backend", function() {
     return gulp.src("server/**/*.{mjs,js}")
         .pipe(eslint({ fix: true }))
         .pipe(eslint.format())
@@ -53,11 +53,11 @@ gulp.task("lint:backend", function () {
         .pipe(eslintIfFixed("server"));
 });
 
-gulp.task('test:backend', gulp.series("lint:backend","beautify:backend" ));
+gulp.task('test:backend', gulp.series("lint:backend", "beautify:backend"));
 
-gulp.task('test:frontend',function(done){
+gulp.task('test:frontend', function(done) {
     return shellWithLog('ng lint my-app --fix', done)
-}, function(done){
+}, function(done) {
     return shellWithLog('ng test --watch=false', done)
 })
 
@@ -65,22 +65,22 @@ gulp.task('test:frontend',function(done){
 //
 //  DEV tasks
 //
-gulp.task('dev:backend',function(done){
+gulp.task('dev:backend', function(done) {
     return shellWithLog('nodemon server/index.js --watch server', done)
 });
 
-gulp.task('dev:frontend',function(done){
+gulp.task('dev:frontend', function(done) {
     return shellWithLog('ng serve --open  --no-progress --live-reload', done)
 });
 
-gulp.task('deploy:pro', function(done){
+gulp.task('deploy:pro', function(done) {
     return deploy("git.heroku.com/bexboardprod.git", done)
 });
-gulp.task('deploy:dev', function(done){
+gulp.task('deploy:dev', function(done) {
     return deploy("git.heroku.com/bexioboarddev.git", done)
 });
 
 
-gulp.task('defaultDev',  gulp.parallel('dev:backend','dev:frontend'));
+gulp.task('defaultDev', gulp.parallel('dev:frontend'));
 
-gulp.task('defaultTest', gulp.parallel('test:backend','test:frontend'));
+gulp.task('defaultTest', gulp.parallel('test:frontend'));

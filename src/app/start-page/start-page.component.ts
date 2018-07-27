@@ -67,7 +67,7 @@ export class StartPageComponent {
 	}
 
 	sendMessage() {
-		console.log("Message sent!");
+		return window.alert("Diese Option ist noch nicht aktiv!");
 	}
 
 	plusSlides(n) {
