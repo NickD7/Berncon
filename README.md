@@ -1,0 +1,2 @@
+# Berncon
+Simple website
